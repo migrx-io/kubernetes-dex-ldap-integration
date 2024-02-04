@@ -14,6 +14,7 @@ kubectl config set-credentials oidc \
     --exec-arg=--oidc-client-id=example-app \
     --exec-arg=--oidc-client-secret=ZXhhbXBsZS1hcHAtc2VjcmV0 \
     --exec-arg=--oidc-extra-scope=email \
+    --exec-arg=--oidc-extra-scope=groups \
     --exec-arg=--certificate-authority=`pwd`/tls-setup/_certs/ca.pem
 
 kubectl --user=oidc get nodes
