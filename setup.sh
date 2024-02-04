@@ -99,3 +99,15 @@ docker run -d --restart always \
     --network kind \
     alpine/socat -dd \
     tcp-listen:$SVC_PORT,fork,reuseaddr tcp-connect:target:$SVC_PORT
+
+
+# install dashboard
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
+
+kubectl proxy
+
+# open dashboard in browser
+# http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+#
+# open oidc app in browser
+# http://127.0.0.1:5555
