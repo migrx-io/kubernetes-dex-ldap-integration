@@ -104,9 +104,15 @@ docker run -d --restart always \
 # install dashboard
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
 
+# kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
+
 # kubectl proxy
 # open dashboard in browser
 # http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+#
+# open projectset-api app
+#
+# http://localhost:8001/api/v1/namespaces/projectset-api-system/services/projectset-api-service:8082/proxy/
 #
 # open oidc app in browser
 # http://127.0.0.1:5555
